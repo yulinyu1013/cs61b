@@ -122,59 +122,54 @@ public class Set {
    *  DO NOT CONSTRUCT ANY NEW NODES.
    *  DO NOT ATTEMPT TO COPY ELEMENTS.
    **/
-  
   public void intersect(Set s) {
-	 if(set.isEmpty() || s.set.isEmpty()) {//if one of the two set is empty
+	  
+	  if(set.isEmpty() || s.set.isEmpty()) {//if one of the two set is empty
 		  set = new DList();
 	  }else {
 		  ListNode s1 = set.front(); 
 		  ListNode s2 = s.set.front();
-		  
 		  try {
 			  while(s1.isValidNode()) {
 				  while (s2.isValidNode()) {
 					  if(((Comparable)s1.item()).compareTo(s2.item())==0) {
 						  s1 = s1.next();
 						  s2 = s2.next();
-//						  System.out.println("s1 now: " + s1.item());
-//						  System.out.println("s2 now: "+ s2.item());
-//						  System.out.println("---");
+						  
+						  if(!s1.isValidNode()) {
+							  break;
+						  }
+						  
+						  if(s1.isValidNode()&&!s2.isValidNode()) {
+							  s1.remove();
+						  }
+
 						    
 					  }else if(((Comparable)s1.item()).compareTo(s2.item())>0) {
 						  s2 = s2.next();
 						  if(!s2.isValidNode()) {
 							  s1.remove();
 						  }
-//						  System.out.println("s1 now: " + s1.item());
-//						  System.out.println("s2 now: "+ s2.item());
-//						  System.out.println("---");
+
 					  }
 					  else { //<0
 						  s1 = s1.next();
 						  s1.prev().remove();
-//						  System.out.println("s1 now: " + s1.item());
-//						  System.out.println("s2 now: "+ s2.item());
-//						  System.out.println("---");
 					  } 
 					  
 				  }
-				  if(s1.isValidNode()&&!s2.isValidNode()) {
-					  s1.remove();
-				  }
+				  
 
 			  }		  
 			  
 		  }catch(InvalidNodeException e) {
 			  System.err.println(e);
+			  e.printStackTrace();
 		  }
 		  
 		  
 	  }
 	 
-	  
-  }
-	  
-	  
 	  
   }
 
