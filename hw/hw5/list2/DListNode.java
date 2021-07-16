@@ -146,9 +146,10 @@ public class DListNode extends ListNode {
     //   but changes are necessary.  For instance, there is no need to check if
     //   "this" is null.  Remember that this node's "myList" field tells you
     //   what DList it's in.
-	this.myList.size--;
-    	this.prev.next = this.next;
+    this.myList.size--;
+    this.prev.next = this.next;
 	this.next.prev = this.prev;
+	
     
 
     // Make this node an invalid node, so it cannot be used to corrupt myList.
@@ -157,5 +158,7 @@ public class DListNode extends ListNode {
     next = null;
     prev = null;
   }
+  
+
 
 }

@@ -19,6 +19,11 @@ public abstract class ListNode {
 
   protected Object item;
   protected List myList;
+//for project 3:
+  protected int weight;
+  protected ListNode partner;
+  protected Object v1;
+  protected Object v2;
 
   /**
    *  isValidNode returns true if this node is valid; false otherwise.
@@ -105,5 +110,72 @@ public abstract class ListNode {
    *  @exception InvalidNodeException if this node is not valid.
    */
   public abstract void remove() throws InvalidNodeException;
+  
+  
+  //for project 3:
+  
+  /**
+   *  setWeight() sets weight of this node.  If this node is invalid,
+   *  throws an exception.
+   *
+   *  @exception InvalidNodeException if this node is not valid.
+   */
+  public void setWeight(int weight) throws InvalidNodeException{
+	  this.weight=weight;
+  };
+  
+  
+  /**
+   *  getWeight() gets weight of this node.  If this node is invalid,
+   *  throws an exception.
+   *
+   *  @exception InvalidNodeException if this node is not valid.
+   */
+  public int getWeight() throws InvalidNodeException{
+	  return this.weight;
+  };
+  
+  /**
+   *  getPartner() finds the node with same item.  If this node is invalid,
+   *  throws an exception.
+   *
+   *  @exception InvalidNodeException if this node is not valid.
+   */
+  public ListNode getPartner() throws InvalidNodeException{
+	  return this.partner;
+  };
+  
+  /**
+   *  setPartner() set the partner of the node.  If this node is invalid,
+   *  throws an exception.
+   *
+   *  @exception InvalidNodeException if this node is not valid.
+   */
+  public void setPartner(ListNode partner) throws InvalidNodeException{
+	  this.partner = partner;
+  };
+  
+  public Object getV1() throws InvalidNodeException{
+	  return this.v1;
+  };
+  
+  public Object getV2() throws InvalidNodeException{
+	  return this.v2;
+  };
+  
+  public void setV1(Object v1) throws InvalidNodeException{
+	  this.v1 = v1;
+  };
+  
+  public void setV2(Object v2) throws InvalidNodeException{
+	  this.v2 = v2;
+  };
 
 }
+
+
+
+
+
+
+
